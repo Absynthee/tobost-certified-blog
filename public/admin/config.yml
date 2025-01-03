@@ -16,14 +16,15 @@ collections:
           label: "ID",
           name: "id",
           widget: "number",
-          default: "{{add entries.length 1}}",
+          default: "{{add entries.length 1}}", 
           required: true
         }
+        # fix for auto increment id
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' } # fix max length
+      - { label: 'Image', name: 'image', widget: 'string' } # fix image path default
       - { label: 'Category', name: 'category', widget: 'string' }
       - {
           label: 'Tags',
