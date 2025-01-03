@@ -5,7 +5,7 @@ title: Tobost Gaming
 excerpt: Tobost Gaming Blog review blog website now open 24/7 it's happening
   it's up and it's open check it out now check it out today right here right now
   !!!!!1111
-image: src/assets/images/hero-image.png
+image: ~/assets/images/mtg-wallpaper.png
 category: Gaming
 tags:
   - gaming

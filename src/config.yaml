@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: 'Tobost Certified'
-    template: '%s — Example'
+    template: '%s | Tobost Certified'
   description: 'Tobost Certified - gaming reviews, news, and more'
   robots:
     index: true
@@ -18,13 +18,13 @@ metadata:
   openGraph:
     site_name: 'Tobost Certified'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/hero-image.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
+    handle: '@Tobost06'
+    site: '@Tobost06'
     cardType: summary_large_image
 
 i18n:
