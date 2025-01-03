@@ -1,6 +1,6 @@
 site:
   name: 'Tobost Certified'
-  site: 'https://example.com'
+  site: 'https://tobost-certified.netlify.app/'
   base: '/' # Change this if you need to deploy to Github Pages, for example
   trailingSlash: false # Generate permalinks with or without "/" at the end
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'Example'
+    default: 'Tobost Certified'
     template: '%s — Example'
-  description: 'This is the default meta description of Example website'
+  description: 'Tobost Certified - gaming reviews, news, and more'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: 'Example'
+    site_name: 'Tobost Certified'
     images:
       - url: '~/assets/images/default.png'
         width: 1200
