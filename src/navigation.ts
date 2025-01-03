@@ -30,7 +30,8 @@ export const headerData = {
     },
     {
       text: 'Search',
-      href: getPermalink('/search'),
+      icon: 'tabler:search',  // Add icon property
+      href: getPermalink(''), 
     },
   ],
 };
