@@ -12,30 +12,26 @@ export const headerData = {
     },
     {
       text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
+      href: getBlogPermalink(),
+      // links: [
+      //   {
+      //     text: 'Blog List',
+      //     href: getBlogPermalink(),
+      //   },
+      //   {
+      //     text: 'Category Page',
+      //     href: getPermalink('gaming', 'category'),
+      //   },
+      //   {
+      //     text: 'Tag Page',
+      //     href: getPermalink('gaming', 'tag'),
+      //   },
+      // ],
     },
-
+    {
+      text: 'Search',
+      href: getPermalink('/search'),
+    },
   ],
 };
 
@@ -44,35 +40,35 @@ export const footerData = {
     {
       title: 'Links 1',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
       ],
     },
     {
       title: 'Links 2',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
       ],
     },
     {
       title: 'Links 3',
       links: [
-        { text: 'Help Center', href: '#' },
-        { text: 'Community', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
+        { text: 'LINK NAME', href: '#' },
       ],
     },
-    {
-      title: 'Links 4',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-      ],
-    },
+    // {
+    //   title: 'Links 4',
+    //   links: [
+    //     { text: 'LINK NAME', href: '#' },
+    //     { text: 'LINK NAME', href: '#' },
+    //     { text: 'LINK NAME', href: '#' },
+    //   ],
+    // },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
