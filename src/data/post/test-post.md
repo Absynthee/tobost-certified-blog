@@ -2,7 +2,7 @@
 publishDate: 2025-01-03T21:18:00.000Z
 title: Test Post
 excerpt: This is a test
-image: https://tobost-certified.netlify.app/src/assets/images/mtg-wallpaper.png
+image: mtg-wallpaper.png
 category: Gaming
 tags:
   - astro
