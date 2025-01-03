@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: 'src/assets/images'
+media_folder: '/src/assets/images'
 public_folder: '/_astro'
 
 collections:
@@ -11,6 +11,7 @@ collections:
     folder: 'src/data/post'
     create: true
     fields:
+      - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
@@ -25,6 +26,10 @@ collections:
           collapsed: false,
           field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
-      - { label: 'Metadata', name: 'metaDescription', widget: 'string', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - {
+          label: 'Metadata',
+          name: 'canonical',
+          widget: 'hidden',
+          default: '{{site.url}}/blog/{{slug}}'
+        }
       - { label: 'Content', name: 'body', widget: 'markdown' }
