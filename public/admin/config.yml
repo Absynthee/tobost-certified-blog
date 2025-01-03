@@ -19,7 +19,6 @@ collections:
           default: "{{add entries.length 1}}",
           required: true
         }
-      - {label: "ID", name: "id", widget: "number"}
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
