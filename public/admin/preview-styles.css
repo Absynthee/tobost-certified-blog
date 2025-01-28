@@ -1,0 +1,50 @@
+/* public/admin/preview-styles.css */
+
+:root {
+  --aw-font-sans: 'Inter Variable';
+
+  font-family: 'Inter Variable';
+}
+
+.cms-preview-container {
+  font-family: 'Inter Variable', Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cms-preview-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Inter Variable', Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+iframe {
+  font-family: 'Inter Variable', Arial, sans-serif;
+  body {
+    font-family: 'Inter Variable', Arial, sans-serif;
+  }
+  img {
+    max-width: 100%;
+    padding-block: 1rem;
+  }  
+}
+
+#preview-pane {
+  font-family: 'Inter Variable', Arial, sans-serif;
+}
+
+.css-1fbp2m3-PreviewContainer {
+    font-family: 'Inter Variable', Arial, sans-serif;
+}
+
+.frame-content {
+    font-family: 'Inter Variable', Arial, sans-serif;
+}

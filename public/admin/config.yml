@@ -5,6 +5,11 @@ backend:
 media_folder: '/src/assets/images'
 public_folder: '/_astro'
 
+site_url: 'https://tobost-certified.netlify.app/'
+logo_url: '/src/assets/favicons/favicon.svg'
+
+stylesheet: '/admin/preview-styles.css'
+
 collections:
   - name: 'post'
     label: 'Post'
@@ -13,21 +18,20 @@ collections:
     identifier_field: 'id'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Excerpt', name: 'excerpt', widget: 'string' } # fix max length
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' } 
       - { label: 'Highlight', name: 'highlight', widget: 'boolean', default: false }
       # - {
       #     label: "ID",
       #     name: "id",
       #     widget: "number",
-      #     default: "{{add entries.length 1}}", 
+      #     default: "{{add entries.length 1}}",
       #     required: true
       #   }
-        # fix for auto increment id
-      - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      # - { label: 'Image', name: 'image', widget: 'string' , default: '~/assets/images/' } 
-      - { label: 'Image', name: 'image', widget: 'image' } 
+      # fix for auto increment id
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime' }
+      - { label: 'Image', name: 'image', widget: 'image' }
 
+      - { label: 'Content', name: 'body', widget: 'markdown' }
       - { label: 'Category', name: 'category', widget: 'string' }
       - {
           label: 'Tags',
@@ -36,12 +40,9 @@ collections:
           allow_add: true,
           allow_delete: true,
           collapsed: false,
+          required: false,
           field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
-      - { label: 'Content', name: 'body', widget: 'markdown' }
-      - {
-          label: 'Metadata',
-          name: 'canonical',
-          widget: 'hidden',
-          default: '{{site.url}}/blog/{{slug}}',
-        }
+
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Tobost06' }
+      - { label: 'Metadata', name: 'canonical', widget: 'hidden', default: '{{site.url}}/blog/{{slug}}' }
