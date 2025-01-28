@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: 'Tobost Certified'
     images:
-      - url: '~/assets/images/hero-image.png'
+      - url: '~/assets/images/tobost-hero.png'
         width: 1200
-        height: 628
+        height: 600
     type: website
   twitter:
     handle: '@Tobost06'
