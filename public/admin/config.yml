@@ -40,7 +40,6 @@ collections:
       - {
           label: 'Metadata',
           name: 'canonical',
-          widget: 'string',
+          widget: 'hidden',
           default: '{{site.url}}/blog/{{slug}}',
-          hidden: true,
         }
