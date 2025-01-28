@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: '/src/assets/images'
+media_folder: '~/assets/images'
 public_folder: '/_astro'
 
 collections:
@@ -25,7 +25,9 @@ collections:
         # fix for auto increment id
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Image', name: 'image', widget: 'string' , default: '~/assets/images/' } # fix image path default
+      # - { label: 'Image', name: 'image', widget: 'string' , default: '~/assets/images/' } 
+      - { label: 'Image', name: 'image', widget: 'image' } 
+
       - { label: 'Category', name: 'category', widget: 'string' }
       - {
           label: 'Tags',
