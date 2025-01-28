@@ -1,20 +1,19 @@
 ---
+// In BlogHighlightedPosts.astro
 import { APP_BLOG } from 'astrowind:config';
-
-import Grid from '~/components/blog/Grid.astro';
-
+import GridTrending from '~/components/blog/GridTrending.astro';
 import { getBlogPermalink } from '~/utils/permalinks';
-import { findPostsByIds } from '~/utils/blog';
+import { findHighlightedPosts } from '~/utils/blog';  // Use the new function
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
+import Button from '../ui/Button.astro';
 
 export interface Props extends Widget {
   title?: string;
   linkText?: string;
   linkUrl?: string | URL;
   information?: string;
-  postIds: string[];
-  highlight?: boolean;
+  count?: number;
 }
 
 const {
@@ -22,7 +21,7 @@ const {
   linkText = 'View all posts',
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
-  postIds = [],
+  count = 2,
 
   id,
   isDark = false,
@@ -30,7 +29,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
+const posts = APP_BLOG.isEnabled ? await findHighlightedPosts({ count }) : [];
 ---
 
 {
@@ -44,12 +43,10 @@ const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
               set:html={title}
             />
             {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-              <a
-                class="text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0"
-                href={linkUrl}
-              >
+              <Button variant="link" href={linkUrl}>
+                {' '}
                 {linkText} »
-              </a>
+              </Button>
             )}
           </div>
         )}
@@ -57,7 +54,7 @@ const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} />
+      <GridTrending posts={posts} />
     </WidgetWrapper>
   ) : (
     <Fragment />

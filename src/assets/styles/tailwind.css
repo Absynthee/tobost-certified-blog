@@ -96,16 +96,15 @@
 .skewer {
   --angle: -3deg;
   --unskew: rotate(calc(var(--angle) * -1)) skew(calc(var(--angle) * -1));
-  transform: rotate(var(--angle)) skew(var(--angle));}
+  transform: rotate(var(--angle)) skew(var(--angle));
+}
 
 .header-title {
-  --Pink: hsl(275, 100%, 97%);
-  --Purple: hsl(292, 16%, 49%);
-  --DarkPurple: hsl(292, 42%, 14%);
   --_offset: 0.1ex;
-  /* font-family: Teko; */
-  text-shadow: 0 var(--_offset) 0 color-mix(in srgb, light-dark(black, white)), 0 calc(var(--_offset) * 2) 0 var(--Purple);
-    line-height: 0.85;
+  text-shadow:
+    var(--aw-color-accent) 2px var(--_offset),
+    white 1px 1px;
+  line-height: 0.85;
   font-weight: 800;
   letter-spacing: 0.1ex;
 }

@@ -55,6 +55,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     author,
     draft = false,
     metadata = {},
+    highlight = false,  
   } = data;
 
   const slug = cleanSlug(id); // cleanSlug(rawSlug.split('/').pop());
@@ -77,25 +78,18 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     id: id,
     slug: slug,
     permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
-
+    highlight: highlight,  
     publishDate: publishDate,
     updateDate: updateDate,
-
     title: title,
     excerpt: excerpt,
     image: image,
-
     category: category,
     tags: tags,
     author: author,
-
     draft: draft,
-
     metadata,
-
     Content: Content,
-    // or 'content' in case you consume from API
-
     readingTime: remarkPluginFrontmatter?.readingTime,
   };
 };
@@ -150,6 +144,15 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post
     return r;
   }, []);
 };
+
+export const findHighlightedPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+  const _count = count || 4;
+  const posts = await fetchPosts();
+  
+  const highlightedPosts = posts.filter((post) => post.highlight === true);
+  return highlightedPosts ? highlightedPosts.slice(0, _count) : [];
+};
+
 
 /** */
 export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {

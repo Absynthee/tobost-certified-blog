@@ -14,7 +14,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' } # fix max length
-      - { label: 'Highlighted', name: 'highlighted', widget: 'boolean', default: false }
+      - { label: 'Highlight', name: 'highlight', widget: 'boolean', default: false }
       # - {
       #     label: "ID",
       #     name: "id",

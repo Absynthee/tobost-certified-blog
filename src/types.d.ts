@@ -9,6 +9,9 @@ export interface Post {
   slug: string;
 
   /**  */
+  highlight: boolean;
+
+  /**  */
   permalink: string;
 
   /**  */
