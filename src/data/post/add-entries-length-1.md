@@ -1,5 +1,4 @@
 ---
-id: "{{add entries.length 1}}"
 author: Absynthe
 publishDate: 2025-01-03T23:24:00.000Z
 title: Light/Dark Mode Toggle
