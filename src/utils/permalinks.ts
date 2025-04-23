@@ -57,7 +57,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = getHomePermalink();
       break;
 
-    case 'blog':
+    case 'reviews':
       permalink = getBlogPermalink();
       break;
 
@@ -116,7 +116,7 @@ export const applyGetPermalinks = (menu: object = {}) => {
         } else if (typeof menu[key] === 'object') {
           if (menu[key].type === 'home') {
             obj[key] = getHomePermalink();
-          } else if (menu[key].type === 'blog') {
+          } else if (menu[key].type === 'reviews') {
             obj[key] = getBlogPermalink();
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
