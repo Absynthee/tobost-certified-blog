@@ -4,7 +4,7 @@ excerpt: Payday 2 delivers an adrenaline-pumping heist experience with its
   cooperative gameplay and extensive customization options.
 highlight: true
 publishDate: 2025-04-25T22:33:00.000Z
-image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/218620/header.jpg
+image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/218620/library_hero_2x.jpg
 category: Game Review
 tags:
   - Payday 2
