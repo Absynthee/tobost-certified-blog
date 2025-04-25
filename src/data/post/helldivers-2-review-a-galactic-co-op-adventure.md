@@ -4,7 +4,7 @@ excerpt: Helldivers 2 elevates the co-op shooter experience with its intense
   action and strategic gameplay, making it a must-play for fans of the genre.
 highlight: false
 publishDate: 2025-04-25T22:24:00.000Z
-image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/553850/31dd776709795ede15d372db94dc4b0abe4e2141/library_header.jpg
+image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/553850/31dd776709795ede15d372db94dc4b0abe4e2141/library_header_2x.jpg
 category: Game Review
 author: Tobost06
 canonical: "{{site.url}}/blog/{{slug}}"
