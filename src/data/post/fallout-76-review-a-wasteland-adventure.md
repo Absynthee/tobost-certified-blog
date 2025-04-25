@@ -4,7 +4,7 @@ excerpt: Fallout 76 offers a vast open world to explore, but its multiplayer
   focus may not appeal to all fans of the series.
 highlight: true
 publishDate: 2025-04-25T22:41:00.000Z
-image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1151340/65500f2132bc3436c5ab4f3cd3ff195377b2b413/header.jpg
+image: https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1151340/2459628f69244b1d26f9519b44951073f0305aa8/hero_capsule_2x.jpg?t=1742313617
 category: Game Review
 tags:
   - Fallout 76
