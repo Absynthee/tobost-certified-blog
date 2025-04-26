@@ -1,0 +1,21 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Search from 'astro-pagefind/components/Search';
+
+const metadata = {
+  title: 'Search',
+  description: 'Search for your favourite game and see if it is certified or not.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title"> Search</Fragment>
+
+    <Fragment slot="search">
+      Is your favourite game certified?
+      <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+    </Fragment>
+  </Hero>
+</Layout>

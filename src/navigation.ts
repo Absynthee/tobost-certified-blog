@@ -11,27 +11,13 @@ export const headerData = {
       href: getPermalink('/about'),
     },
     {
-      text: 'Reviews',
+      text: 'Posts',
       href: getBlogPermalink(),
-      // links: [
-      //   {
-      //     text: 'Blog List',
-      //     href: getBlogPermalink(),
-      //   },
-      //   {
-      //     text: 'Category Page',
-      //     href: getPermalink('gaming', 'category'),
-      //   },
-      //   {
-      //     text: 'Tag Page',
-      //     href: getPermalink('gaming', 'tag'),
-      //   },
-      // ],
     },
     {
       text: 'Search',
       icon: 'tabler:search',  // Add icon property
-      href: getPermalink(''), 
+      href: getPermalink('/search'), 
     },
   ],
 };
@@ -39,37 +25,21 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Links 1',
+      title: 'Site',
       links: [
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#' },
+        { text: 'Posts', href: '#' },
       ],
     },
     {
-      title: 'Links 2',
+      title: 'Posts',
       links: [
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
+        { text: 'recent post', href: '#' },
+        { text: 'recent post', href: '#' },
+        { text: 'recent post', href: '#' },
       ],
     },
-    {
-      title: 'Links 3',
-      links: [
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
-        { text: 'LINK NAME', href: '#' },
-      ],
-    },
-    // {
-    //   title: 'Links 4',
-    //   links: [
-    //     { text: 'LINK NAME', href: '#' },
-    //     { text: 'LINK NAME', href: '#' },
-    //     { text: 'LINK NAME', href: '#' },
-    //   ],
-    // },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },

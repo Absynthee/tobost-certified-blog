@@ -1,44 +1,34 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About Tobost06',
+  description: 'About Tobost06 - Achievement hunter, Norwegian proofreader for Hypixel, Capybara lover, NounTown support.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="The Author"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      style: 'rounded-md; border:1px solid var(--aw-color-accent); max-height: unset; aspect-ratio: unset;',
+      src: '~/assets/images/tobost-steam-2.png',
+      alt: 'Tobost Steam Profile',
     }}
   >
     <Fragment slot="title">
-      Tobost<span class="text-accent dark:text-white highlight">06</span>
+      Tobost<span class="text-accent">06</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      <p>Norwegian Proofreader for Hypixel 🇳🇴</p>
+      <p>Steam Achievement Hunter</p>
+      <p>Capybara ❤️</p>
+      <p>NounTown Support 📋</p>
+      <br />
+      <p><a href="https://steamcommunity.com/id/Tobost06">https://steamcommunity.com/id/Tobost06</a></p>
+      <p><a href="https://steamhunters.com/id/Tobost06/games">https://steamhunters.com/id/Tobost06/games</a></p>
     </Fragment>
   </Hero>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Statistics of some kind"
-    stats={[
-      { title: 'XXX', amount: 'xxxxxx' },
-      { title: 'XXX', amount: 'xxxxxx' },
-      { title: 'XXX', amount: 'xxxxxx' },
-      { title: 'XXX', amount: 'xxxxxx' },
-    ]}
-  />
-
 </Layout>

@@ -2,16 +2,26 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-// import Note from '~/components/widgets/Note.astro';
-// import Features from '~/components/widgets/Features.astro';
-// import Features2 from '~/components/widgets/Features2.astro';
-// import Steps from '~/components/widgets/Steps.astro';
-// import Content from '~/components/widgets/Content.astro';
-// import FAQs from '~/components/widgets/FAQs.astro';
-// import CallToAction from '~/components/widgets/CallToAction.astro';
+
 import Stats from '~/components/widgets/Stats.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro';
+import Search from 'astro-pagefind/components/Search';
+
+import { fetchPosts } from '~/utils/blog';
+
+// Get all posts 
+const allPosts = await fetchPosts();
+
+// Count total number of posts
+const totalPosts = allPosts.length;
+
+// Count posts with 'Game Review' category
+const totalReviews = allPosts.filter(
+  (post) =>
+    (post.category && post.category.slug === 'game-review') ||
+    (post.tags && post.tags.some((tag) => tag.slug === 'game-review'))
+).length;
 
 const metadata = {
   title: 'Tobost Certified - a blog for reviewing games and stuff',
@@ -20,50 +30,32 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'All Posts',
-        href: '/blog',
-        // icon: 'tabler:heart',
-      },
-      {
-        variant: 'secondary',
-        text: 'About Me',
-        href: '/about',
-      },
-    ]}
-    image={{ src: '~/assets/images/tobost-hero.png', alt: 'Tobost Hero Image', height: 250 }}
-  >
+  <Hero>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">Tobost Certified</span> Gaming Reviews
+      <span class="text-accent">Tobost Certified</span> Gaming Reviews
     </Fragment>
 
+    <br /><br />
+
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Certified or Not?</span> That's what I aim to find out with my curations. If it's certified, I found it absolutely great!</span>
+      <span class="font-semibold">Certified or Not?</span> That's what I aim to find out with my curations. If it's certified,
+      I found it absolutely great!
+      <br />
+      <br />
+      <span class="hidden sm:inline"> Is your favourite game certified?</span>
+      <Search id="search" className="pagefind-ui" uiOptions={{ showImages: true }} />
     </Fragment>
   </Hero>
 
-  <BlogLatestPosts
-    title="Newest Reviews"
-    information=""
-  />
+  <BlogLatestPosts title="Latest Posts" information="" />
 
-  <BlogHighlightedPosts 
-  title="Top Reviews"
-  information=""
-      />
-
+  <BlogHighlightedPosts title="Top Posts" information="" />
 
   <Stats
     stats={[
-      { title: 'Articles', amount: 'xxxxx' },
-      { title: 'Reviews', amount: 'xxxxx' },
+      { title: 'Posts', amount: totalPosts.toString() },
+      { title: 'Reviews', amount: totalReviews.toString() },
     ]}
   />
-
 </Layout>

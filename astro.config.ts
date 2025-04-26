@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
-
+import pagefind from "astro-pagefind";
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
@@ -23,7 +23,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-
+  build: {
+    format: "file",
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -47,6 +49,7 @@ export default defineConfig({
         ],
       },
     }),
+    [pagefind()],
 
     ...whenExternalScripts(() =>
       partytown({

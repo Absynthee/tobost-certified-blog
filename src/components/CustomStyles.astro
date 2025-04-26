@@ -1,23 +1,5 @@
 ---
 import '@fontsource-variable/inter';
-// import '@fontsource-variable/poppins';
-
-// 'DM Sans'
-// Nunito
-// Dosis
-// Outfit
-// Roboto
-// Literata
-// 'IBM Plex Sans'
-// Karla
-// Poppins
-// 'Fira Sans'
-// 'Libre Franklin'
-// Inconsolata
-// Raleway
-// Oswald
-// 'Space Grotesk'
-// Urbanist
 ---
 
 <style is:inline>
@@ -29,10 +11,11 @@ import '@fontsource-variable/inter';
     --aw-color-primary: rgb(86, 50, 216);
     --aw-color-secondary: rgb(76, 29, 187);
     --aw-color-accent: rgb(94, 84, 224);
+    --aw-color-accent-muted: rgb(94, 84, 224, 10%);
 
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-text-muted: rgb(11 11 11 / 90%);
     --aw-color-bg-page: rgb(255 255 255);
 
     --aw-color-bg-page-dark: rgb(3 6 32);
@@ -40,6 +23,15 @@ import '@fontsource-variable/inter';
     ::selection {
       background-color: lavender;
     }
+  }
+
+  a:hover {
+    color: var(--aw-color-primary);
+    transition: color 0.2s ease-in-out;
+  }
+
+  .text-accent {
+    text-shadow: var(--aw-color-accent) 0px 0px 5rem;
   }
 
   .dark {

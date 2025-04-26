@@ -18,6 +18,9 @@
   .text-muted {
     color: var(--aw-color-text-muted);
   }
+  .accent-muted {
+    color: var(--aw-color-accent-muted);
+  }
 }
 
 @layer components {
@@ -101,10 +104,7 @@
 
 .header-title {
   --_offset: 0.1ex;
-  text-shadow:
-    var(--aw-color-accent) 2px var(--_offset),
-    white 1px 1px;
   line-height: 0.85;
   font-weight: 800;
-  letter-spacing: 0.1ex;
+  /* letter-spacing: 0.1ex; */
 }
