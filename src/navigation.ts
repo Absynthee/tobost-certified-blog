@@ -52,7 +52,7 @@ export const footerData = {
     { ariaLabel: 'Steam', icon: 'tabler:brand-steam', href: '#' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="/src/assets/images/kittycode-icon.png" alt="Logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://www.kittycodecreative.com/" target="_blank"> KittyCode Creative</a> with ❤️
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://www.kittycodecreative.com/images/kittycode_logo.svg" alt="Logo" loading="lazy"></img>
+    Made by <a class="text-orange-500 hover:text-orange-700" href="https://www.kittycodecreative.com/" target="_blank"> KittyCode Creative</a>
   `,
 };
