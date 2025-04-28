@@ -3,10 +3,10 @@ backend:
   branch: main
 
 media_folder: 'src/assets/images'
-public_folder: '/src/assets/images'
+public_folder: '/assets/images'
 
 site_url: 'https://tobost-certified.netlify.app/'
-logo_url: '/src/assets/favicons/favicon.svg'
+logo_url: '/assets/favicons/favicon.svg'
 
 stylesheet: '/admin/preview-styles.css'
 
@@ -20,14 +20,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' } 
       - { label: 'Highlight', name: 'highlight', widget: 'boolean', default: false }
-      # - {
-      #     label: "ID",
-      #     name: "id",
-      #     widget: "number",
-      #     default: "{{add entries.length 1}}",
-      #     required: true
-      #   }
-      # fix for auto increment id
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime' }
       - { label: 'Image', name: 'image', widget: 'image' }
 
@@ -46,3 +38,11 @@ collections:
 
       - { label: 'Author', name: 'author', widget: 'string', default: 'Tobost06' }
       - { label: 'Metadata', name: 'canonical', widget: 'hidden', default: '{{site.url}}/blog/{{slug}}' }
+      # - {
+      #     label: "ID",
+      #     name: "id",
+      #     widget: "number",
+      #     default: "{{add entries.length 1}}",
+      #     required: true
+      #   }
+      # fix for auto increment id

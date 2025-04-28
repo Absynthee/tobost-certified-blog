@@ -7,6 +7,7 @@ import SocialShare from '~/components/common/SocialShare.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
+import { ensureImageDimensions } from '~/utils/images';
 
 import type { Post } from '~/types';
 
@@ -16,6 +17,15 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+
+// Prepare image with dimensions when coming from CMS
+// Use only properties that exist on the Post type
+const imageProps = post.image 
+  ? ensureImageDimensions(
+      post.image, 
+      post.excerpt || post.title || 'Blog post featured image'
+    ) 
+  : null;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -71,15 +81,15 @@ const { post, url } = Astro.props;
       </p>
 
       {
-        post.image ? (
+        post.image && imageProps ? (
           <Image
-            src={post.image}
+            src={imageProps.src}
             class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
-            width={900}
-            height={506}
+            alt={imageProps.alt}
+            width={imageProps.width}
+            height={imageProps.height}
             loading="eager"
             decoding="async"
           />

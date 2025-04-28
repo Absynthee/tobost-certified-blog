@@ -21,6 +21,24 @@ export const fetchLocalImages = async () => {
   return _images;
 };
 
+/** 
+ * Default dimensions to use when image dimensions are unknown
+ */
+const DEFAULT_IMAGE_WIDTH = 1200;
+const DEFAULT_IMAGE_HEIGHT = 630;
+
+/**
+ * Ensures an image has dimensions when used with CMS content
+ */
+export function ensureImageDimensions(imagePath?: string, imageAlt: string = 'Featured image') {
+  return {
+    src: imagePath || '',
+    alt: imageAlt,
+    width: DEFAULT_IMAGE_WIDTH,
+    height: DEFAULT_IMAGE_HEIGHT,
+  };
+}
+
 /** */
 export const findImage = async (
   imagePath?: string | ImageMetadata | null
@@ -31,7 +49,32 @@ export const findImage = async (
   }
 
   // Absolute paths
-  if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
+  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+    return imagePath;
+  }
+
+  // Handle CMS image paths from /assets/images
+  if (imagePath.startsWith('/assets/images/')) {
+    const images = await fetchLocalImages();
+    if (!images) return imagePath;
+
+    // Try to find a matching asset by filename
+    const filename = imagePath.split('/').pop();
+    if (!filename) return imagePath;
+
+    // Look through all available images to find one with matching filename
+    for (const key in images) {
+      if (key.endsWith(filename)) {
+        return ((await images[key]()) as { default: ImageMetadata })['default'];
+      }
+    }
+
+    // If not found in assets, return original path
+    return imagePath;
+  }
+
+  // Other absolute paths
+  if (imagePath.startsWith('/')) {
     return imagePath;
   }
 
@@ -58,8 +101,8 @@ export const adaptOpenGraphImages = async (
   }
 
   const images = openGraph.images;
-  const defaultWidth = 1200;
-  const defaultHeight = 626;
+  const defaultWidth = DEFAULT_IMAGE_WIDTH;
+  const defaultHeight = DEFAULT_IMAGE_HEIGHT;
 
   const adaptedImages = await Promise.all(
     images.map(async (image) => {
