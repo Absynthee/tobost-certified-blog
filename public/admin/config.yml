@@ -4,8 +4,6 @@ backend:
 
 media_folder: 'src/assets/images'
 public_folder: '/assets/images'
-preview_styles: '/admin/preview-styles.css'
-
 
 site_url: 'https://tobost-certified.netlify.app/'
 logo_url: 'https://tobost-certified.netlify.app/decap-logo.png'
@@ -20,7 +18,7 @@ collections:
     identifier_field: 'id'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' } 
       - { label: 'Highlight', name: 'highlight', widget: 'boolean', default: false }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime' }
       - { label: 'Image', name: 'image', widget: 'image' }
@@ -35,9 +33,6 @@ collections:
           allow_delete: true,
           collapsed: false,
           required: false,
-          hint: 'Add 3 relevant tags to categorize this post (e.g., "Name of game", "Strategy", "RPG")',
-          summary: '{{fields.tag}}',
-          label_singular: 'Tag',
           field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
 
