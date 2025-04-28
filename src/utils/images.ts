@@ -24,7 +24,7 @@ export const fetchLocalImages = async () => {
 /** 
  * Default dimensions to use when image dimensions are unknown
  */
-const DEFAULT_IMAGE_WIDTH = 1200;
+const DEFAULT_IMAGE_WIDTH = 900;
 const DEFAULT_IMAGE_HEIGHT = 630;
 
 /**
