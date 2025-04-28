@@ -6,7 +6,7 @@ media_folder: 'src/assets/images'
 public_folder: '/assets/images'
 
 site_url: 'https://tobost-certified.netlify.app/'
-logo_url: 'src/assets/favicons/favicon.webp'
+logo_url: 'https://tobost-certified.netlify.app/favicons/favicon.webp'
 
 stylesheet: '/admin/preview-styles.css'
 
