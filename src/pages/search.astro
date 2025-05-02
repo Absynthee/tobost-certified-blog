@@ -19,3 +19,64 @@ const metadata = {
     </Fragment>
   </Hero>
 </Layout>
+
+<style is:global>
+  :root {
+    --pagefind-ui-scale: 0.8;
+    --pagefind-ui-primary: var(--aw-color-accent-muted);
+    --pagefind-ui-text: lightdark(white, black);
+    --pagefind-ui-message-text: lightdark(white, black);
+    --pagefind-ui-result-title-text: lightdark(white, black);
+    --pagefind-ui-result-text: lightdark(white, black);
+    --pagefind-ui-background: lightdark(white, black);
+    --pagefind-input-background: var(--aw-color-accent-muted);
+    --pagefind-ui-border: var(--aw-color-accent);
+    --pagefind-ui-tag: lightdark(white, black);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--aw-font-sans);
+    --pagefind-button-background: var(--aw-color-primary);
+    --pagefind-button-color: var(--aw-color-secondary);
+  }
+
+  #search .pagefind-ui__search-input,
+  #search .pagefind-ui__search-clear {
+    background-color: var(--pagefind-input-background);
+    color: var(--pagefind-ui-text);
+    padding-inline: 2%;
+  }
+
+  #search .pagefind-ui__result-title,
+  #search .pagefind-ui__result-link {
+    display: inline-block;
+    font-weight: 700;
+    font-size: calc(2rem * var(--pagefind-ui-scale));
+    color: var(--pagefind-ui-result-title-text);
+  }
+
+  #search .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-result-text);
+    font-weight: 400;
+    font-size: calc(1.2rem * var(--pagefind-ui-scale));
+    text-align: left;
+  }
+
+  #search .pagefind-ui__message {
+    color: var(--pagefind-ui-message-text);
+    margin: calc(0.5rem * var(--pagefind-ui-scale)) 0;
+    font-size: calc(1rem * var(--pagefind-ui-scale));
+  }
+
+  #search .pagefind-ui__button {
+    color: white;
+    background: var(--aw-color-primary);
+    font-weight: 600;
+    font-size: calc(1rem * var(--pagefind-ui-scale));
+  }
+
+  #search .pagefind-ui__result-thumb {
+    display: none;
+  }
+</style>
