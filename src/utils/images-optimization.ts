@@ -147,8 +147,8 @@ const getStyle = ({
   }
   if (layout === 'constrained') {
     styleEntries.push(['max-width', pixelate(width)]);
-    styleEntries.push(['max-height', pixelate(height)]);
-    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    // styleEntries.push(['max-height', pixelate(height)]);
+    // styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
     styleEntries.push(['width', '100%']);
   }
   if (layout === 'fullWidth') {
@@ -159,13 +159,13 @@ const getStyle = ({
   if (layout === 'responsive') {
     styleEntries.push(['width', '100%']);
     styleEntries.push(['height', 'auto']);
-    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    // styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
   if (layout === 'contained') {
     styleEntries.push(['max-width', '100%']);
     styleEntries.push(['max-height', '100%']);
     styleEntries.push(['object-fit', 'contain']);
-    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    // styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
   if (layout === 'cover') {
     styleEntries.push(['max-width', '100%']);

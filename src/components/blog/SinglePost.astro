@@ -28,17 +28,17 @@ const imageProps = post.image
   : null;
 ---
 
-<section class="py-8 sm:py-16 lg:py-20 mx-auto">
+<section class="py-8 sm:py-16 lg:py-20 mx-auto" data-pagefind-body>
   <article>
     <header
       class={post.image
         ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
         : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center" data-pagefind-ignore>
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)} </time>
           {
             post.author && (
               <>
@@ -62,7 +62,7 @@ const imageProps = post.image
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> min read
+                &nbsp;· <span data-pagefind-ignore>{post.readingTime}</span> min read
               </>
             )
           }
@@ -84,9 +84,9 @@ const imageProps = post.image
         post.image && imageProps ? (
           <Image
             src={imageProps.src}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="max-w-full lg:max-w-[900px] max-h-[400px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
+            sizes="max-width: 900px, max-height: 400px"
             alt={imageProps.alt}
             width={imageProps.width}
             height={imageProps.height}

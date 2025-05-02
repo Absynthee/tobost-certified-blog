@@ -118,4 +118,19 @@ const metadata = {
   #search .pagefind-ui__result-thumb {
     display: none;
   }
+
+  .pagefind-ui__results mark,
+  .pagefind-ui mark {
+    background-color: var(--aw-color-accent);
+    color: #f1f1f4;
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .pagefind-ui__search-input:focus-visible {
+    outline: none;
+    border-color: var(--aw-color-accent);
+    box-shadow: 0 0 2rem 0 var(--aw-color-accent);
+  }
 </style>

@@ -1,7 +1,7 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Search from 'astro-pagefind/components/Search';
+import PagefindSearch from 'astro-pagefind/components/Search';
 
 const metadata = {
   title: 'Search',
@@ -15,7 +15,7 @@ const metadata = {
 
     <Fragment slot="search">
       Is your favourite game certified?
-      <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+      <PagefindSearch id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
     </Fragment>
   </Hero>
 </Layout>
@@ -78,5 +78,20 @@ const metadata = {
 
   #search .pagefind-ui__result-thumb {
     display: none;
+  }
+
+  .pagefind-ui__results mark,
+  .pagefind-ui mark {
+    background-color: var(--aw-color-accent);
+    color: #f1f1f4;
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .pagefind-ui__search-input:focus-visible {
+    outline: none;
+    border-color: var(--aw-color-accent);
+    box-shadow: 0 0 2rem 0 var(--aw-color-accent);
   }
 </style>

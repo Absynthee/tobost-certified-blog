@@ -49,7 +49,7 @@ export default defineConfig({
         ],
       },
     }),
-    [pagefind()],
+    pagefind(),
 
     ...whenExternalScripts(() =>
       partytown({
